@@ -1,7 +1,6 @@
 'use strict';
 
-describe('checkmark', function() {
-
+xdescribe('checkmark', function() {
   beforeEach(module('core'));
 
   it('should convert boolean values to unicode checkmark or cross',
@@ -10,5 +9,4 @@ describe('checkmark', function() {
       expect(checkmarkFilter(false)).toBe('\u2718');
     })
   );
-
 });

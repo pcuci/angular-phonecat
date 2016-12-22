@@ -1,16 +1,10 @@
 'use strict';
-
 // Register `phoneDetail` component, along with its associated controller and template
 angular.
-  module('phoneDetail').
-  component('phoneDetail', {
-    templateUrl: 'phone-detail/phone-detail.template.html',
-    bindings: {
-      description: '<',
-      myBinding: '@'
-    },
-    controller: ['$routeParams', 'Phone',
-      function PhoneDetailController($routeParams, Phone) {
+  module('hello').
+  component('hello', {
+    templateUrl: 'core/hello/hello.template.html',
+    controller: ['$routeParams', function helloController($routeParams) {
         var self = this;
         self.phone = Phone.get({phoneId: $routeParams.phoneId}, function(phone) {
           self.setImage(phone.images[0]);

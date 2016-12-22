@@ -1,7 +1,5 @@
 'use strict';
-
-describe('phoneList', function() {
-
+xdescribe('phoneList', function() {
   // Load the module that contains the `phoneList` component before each test
   beforeEach(module('phoneList'));
 
@@ -29,7 +27,5 @@ describe('phoneList', function() {
     it('should set a default value for the `orderProp` property', function() {
       expect(ctrl.orderProp).toBe('age');
     });
-
   });
-
 });

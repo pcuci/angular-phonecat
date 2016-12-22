@@ -1,8 +1,17 @@
 //jshint strict: false
 module.exports = function(config) {
   config.set({
-
     basePath: './app',
+
+    preprocessors: {
+      '**/*.html': ['ng-html2js']
+    },
+
+    ngHtml2JsPreprocessor: {
+       // setting this option will create only a single module that contains templates
+       // from all the files, so you can load them all with module('foo')
+       moduleName: 'templates'
+    },
 
     files: [
       'bower_components/angular/angular.js',
@@ -13,20 +22,17 @@ module.exports = function(config) {
       '**/*.module.js',
       '*!(.module|.spec).js',
       '!(bower_components)/**/*!(.module|.spec).js',
-      '**/*.spec.js'
+      '**/*.spec.js',
+      '**/*.html'
     ],
 
     autoWatch: true,
-
     frameworks: ['jasmine'],
-
-    browsers: ['Chrome', 'Firefox'],
-
+    browsers: ['PhantomJS'],
     plugins: [
-      'karma-chrome-launcher',
-      'karma-firefox-launcher',
+      'karma-ng-html2js-preprocessor',
+      'karma-phantomjs-launcher',
       'karma-jasmine'
     ]
-
   });
 };
